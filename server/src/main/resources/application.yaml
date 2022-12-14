@@ -1,0 +1,14 @@
+server:
+  port: 8001
+  servlet:
+    context-path: /api/v1
+spring:
+  application:
+    name: ganbaro-server
+  datasource:
+    url: jdbc:postgresql://debian.yuki.im:2200/db_ganbaro
+    driver-class-name: org.postgresql.Driver
+    username: ganbaro
+    password:
+mybatis:
+  mapper-locations: classpath:mapper/*.xml

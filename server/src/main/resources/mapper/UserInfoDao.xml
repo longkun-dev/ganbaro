@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="im.yuki.ganbaro.server.account.dao.UserInfoDao">
+
+    <resultMap id="BaseResultMap" type="im.yuki.ganbaro.server.account.entity.UserInfo">
+        <id property="id" column="id" jdbcType="VARCHAR"/>
+        <result property="uid" column="uid" jdbcType="VARCHAR"/>
+        <result property="username" column="username" jdbcType="VARCHAR"/>
+        <result property="password" column="password" jdbcType="VARCHAR"/>
+        <result property="sex" column="sex" jdbcType="VARCHAR"/>
+        <result property="description" column="description" jdbcType="VARCHAR"/>
+        <result property="lastLoginTime" column="last_login_time" jdbcType="TIMESTAMP"/>
+        <result property="accountStatus" column="account_status" jdbcType="VARCHAR"/>
+        <result property="createdTime" column="created_time" jdbcType="TIMESTAMP"/>
+        <result property="createdBy" column="created_by" jdbcType="VARCHAR"/>
+        <result property="updatedTime" column="updated_time" jdbcType="TIMESTAMP"/>
+        <result property="updatedBy" column="updated_by" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,uid,username,
+        password,sex,description,
+        last_login_time,account_status,created_time,
+        created_by,updated_time,updated_by
+    </sql>
+
+    <insert id="insert" parameterType="im.yuki.ganbaro.server.account.entity.UserInfo">
+        insert into user_info(uid, username, password, sex, description, last_login_time,
+                              account_status, created_time, created_by, updated_time, updated_by)
+        values (#{uid},
+                #{username},
+                #{password},
+                #{sex},
+                #{description},
+                #{lastLoginTime},
+                #{accountStatus},
+                now(),
+                #{createdBy},
+                now(),
+                #{updatedBy})
+    </insert>
+
+    <update id="updateAccountStatusByUid">
+        update user_info
+        set account_status = #{accountStatus}
+        where uid = #{uid}
+    </update>
+
+    <update id="updateLastLoginTimeByUid">
+        update user_info
+        set last_login_time = #{date}
+        where uid = #{uid}
+    </update>
+
+    <select id="queryByUid" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from user_info
+        where uid = #{uid}
+    </select>
+
+    <select id="queryMaxUid" resultType="java.lang.String">
+        select max(uid)
+        from user_info
+    </select>
+</mapper>
