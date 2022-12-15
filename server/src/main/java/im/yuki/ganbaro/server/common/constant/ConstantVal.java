@@ -40,4 +40,15 @@ public class ConstantVal {
      */
     public static final String ACCOUNT_DEFAULT_DESCRIPTION_OTHER = "这个人什么也没说";
 
+
+    /**
+     * 打卡记录-完成
+     */
+    public static final String CHECK_IN_Y = "Y";
+
+    /**
+     * 打卡记录-未完成
+     */
+    public static final String CHECK_IN_N = "N";
+
 }

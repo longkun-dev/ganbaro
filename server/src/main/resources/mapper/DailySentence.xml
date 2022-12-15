@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="im.yuki.ganbaro.server.home.dao.DailySentenceDao">
+
+    <resultMap id="BaseResultMap" type="im.yuki.ganbaro.server.home.entity.DailySentence">
+        <id property="id" column="id" jdbcType="VARCHAR"/>
+        <result property="content" column="content" jdbcType="VARCHAR"/>
+        <result property="author" column="author" jdbcType="VARCHAR"/>
+        <result property="showTimes" column="show_times" jdbcType="INTEGER"/>
+        <result property="likeTimes" column="like_times" jdbcType="INTEGER"/>
+        <result property="createdTime" column="created_time" jdbcType="TIMESTAMP"/>
+        <result property="createdBy" column="created_by" jdbcType="VARCHAR"/>
+        <result property="updatedTime" column="updated_time" jdbcType="TIMESTAMP"/>
+        <result property="updatedBy" column="updated_by" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,content,author,
+        show_times,like_times,created_time,
+        created_by,updated_time,updated_by
+    </sql>
+
+    <insert id="insert" parameterType="im.yuki.ganbaro.server.home.entity.DailySentence">
+        insert into user_info(content, author)
+        values (#{content},
+                #{author})
+    </insert>
+
+    <select id="queryByRandom" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from daily_sentence
+        tablesample bernoulli(0.2)
+        limit 1
+    </select>
+
+    <select id="queryById" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from daily_sentence
+        where id = #{id}
+    </select>
+
+    <update id="updateShowTimes" parameterType="java.lang.String">
+        update daily_sentence
+        set show_times   = show_times + 1,
+            updated_time = now()
+        where id = #{id}
+    </update>
+
+    <update id="updateLikeTimes" parameterType="java.lang.String">
+        update daily_sentence
+        set like_times   = like_times + 1,
+            updated_time = now()
+        where id = #{id}
+    </update>
+</mapper>

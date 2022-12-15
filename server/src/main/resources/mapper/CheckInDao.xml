@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="im.yuki.ganbaro.server.home.dao.CheckInDao">
+
+    <resultMap id="BaseResultMap" type="im.yuki.ganbaro.server.home.entity.CheckIn">
+        <id property="id" column="id" jdbcType="VARCHAR"/>
+        <result property="uid" column="uid" jdbcType="VARCHAR"/>
+        <result property="day" column="day" jdbcType="TIMESTAMP"/>
+        <result property="isDiDIt" column="is_did_it" jdbcType="VARCHAR"/>
+        <result property="createdTime" column="created_time" jdbcType="TIMESTAMP"/>
+        <result property="createdBy" column="created_by" jdbcType="VARCHAR"/>
+        <result property="updatedTime" column="updated_time" jdbcType="TIMESTAMP"/>
+        <result property="updatedBy" column="updated_by" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,uid,day,is_did_it,created_time,created_by,updated_time,updated_by
+    </sql>
+
+    <insert id="insert" parameterType="im.yuki.ganbaro.server.home.entity.DailySentence">
+        insert into check_id(uid, day, is_did_it, created_by, updated_by)
+        values (#{uid},
+                #{day},
+                #{didIt},
+                #{createdBy},
+                #{updatedBy})
+    </insert>
+
+    <select id="queryByUidAndDay">
+        select
+        <include refid="Base_Column_List"/>
+        from check_in
+        where uid = #{uid}
+            and day = #{date}
+    </select>
+
+    <select id="queryByUidAndDayRange" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from check_in
+        where uid = #{uid}
+        <test if="startDate != null">
+            and day <![CDATA[ >= ]]> #{startDate}
+        </test>
+        <test if="endDate != null">
+            and day <![CDATA[ <= ]]> #{endDate}
+        </test>
+    </select>
+
+    <update id="update">
+        update check_in
+        set is_did_it    = #{isDidIt},
+            updated_time = now()
+        where uid = #{uid}
+            and day = #{date}
+    </update>
+</mapper>
