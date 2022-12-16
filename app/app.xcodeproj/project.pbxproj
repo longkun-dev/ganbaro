@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2DAAF1CB8BBB1361A12D76BA /* Pods_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49360A8D91668975C32BE791 /* Pods_app.framework */; };
 		36BB3BDA2946367400024D70 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BB3BD92946367400024D70 /* LoginView.swift */; };
-		36BB3BDC2946369000024D70 /* DidItViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BB3BDB2946369000024D70 /* DidItViewModel.swift */; };
-		36BB3BDE2946369F00024D70 /* DidItModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BB3BDD2946369F00024D70 /* DidItModel.swift */; };
+		36BB3BDC2946369000024D70 /* CheckInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BB3BDB2946369000024D70 /* CheckInViewModel.swift */; };
+		36BB3BDE2946369F00024D70 /* CheckInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BB3BDD2946369F00024D70 /* CheckInModel.swift */; };
+		36BD7FF8294CC5590069B281 /* RequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BD7FF7294CC5590069B281 /* RequestTool.swift */; };
 		36DAB4832945FC6E00BD9B70 /* appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DAB4822945FC6E00BD9B70 /* appApp.swift */; };
 		36DAB4852945FC6E00BD9B70 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DAB4842945FC6E00BD9B70 /* RegisterView.swift */; };
 		36DAB4872945FC7200BD9B70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36DAB4862945FC7200BD9B70 /* Assets.xcassets */; };
@@ -39,9 +41,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09E93B75D8D7AE6AA699F8DE /* Pods-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app.release.xcconfig"; path = "Target Support Files/Pods-app/Pods-app.release.xcconfig"; sourceTree = "<group>"; };
 		36BB3BD92946367400024D70 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		36BB3BDB2946369000024D70 /* DidItViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DidItViewModel.swift; sourceTree = "<group>"; };
-		36BB3BDD2946369F00024D70 /* DidItModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DidItModel.swift; sourceTree = "<group>"; };
+		36BB3BDB2946369000024D70 /* CheckInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewModel.swift; sourceTree = "<group>"; };
+		36BB3BDD2946369F00024D70 /* CheckInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInModel.swift; sourceTree = "<group>"; };
+		36BD7FF7294CC5590069B281 /* RequestTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTool.swift; sourceTree = "<group>"; };
 		36DAB47F2945FC6E00BD9B70 /* Ganbaro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ganbaro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36DAB4822945FC6E00BD9B70 /* appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appApp.swift; sourceTree = "<group>"; };
 		36DAB4842945FC6E00BD9B70 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -54,6 +58,8 @@
 		36DAB49F2945FC7200BD9B70 /* appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		36DAB4B229460BAE00BD9B70 /* UserInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoModel.swift; sourceTree = "<group>"; };
 		36DAB4B529460C4B00BD9B70 /* UserInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewModel.swift; sourceTree = "<group>"; };
+		49360A8D91668975C32BE791 /* Pods_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7702EF4A4323BF31567F3250 /* Pods-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app.debug.xcconfig"; path = "Target Support Files/Pods-app/Pods-app.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DAAF1CB8BBB1361A12D76BA /* Pods_app.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +88,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		36BD7FF6294CC5370069B281 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				36BD7FF7294CC5590069B281 /* RequestTool.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		36DAB4762945FC6E00BD9B70 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +103,8 @@
 				36DAB4922945FC7200BD9B70 /* appTests */,
 				36DAB49C2945FC7200BD9B70 /* appUITests */,
 				36DAB4802945FC6E00BD9B70 /* Products */,
+				6CACE49D32B25F888FEBB39A /* Pods */,
+				CF3BC9EC2606C6782AC30FE4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,6 +121,7 @@
 		36DAB4812945FC6E00BD9B70 /* app */ = {
 			isa = PBXGroup;
 			children = (
+				36BD7FF6294CC5370069B281 /* Tools */,
 				36DAB4AE2945FCCA00BD9B70 /* ViewModels */,
 				36DAB4AD2945FCB800BD9B70 /* Views */,
 				36DAB4AC2945FCAB00BD9B70 /* Models */,
@@ -143,7 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				36DAB4B229460BAE00BD9B70 /* UserInfoModel.swift */,
-				36BB3BDD2946369F00024D70 /* DidItModel.swift */,
+				36BB3BDD2946369F00024D70 /* CheckInModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -161,9 +179,26 @@
 			isa = PBXGroup;
 			children = (
 				36DAB4B529460C4B00BD9B70 /* UserInfoViewModel.swift */,
-				36BB3BDB2946369000024D70 /* DidItViewModel.swift */,
+				36BB3BDB2946369000024D70 /* CheckInViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6CACE49D32B25F888FEBB39A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7702EF4A4323BF31567F3250 /* Pods-app.debug.xcconfig */,
+				09E93B75D8D7AE6AA699F8DE /* Pods-app.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CF3BC9EC2606C6782AC30FE4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				49360A8D91668975C32BE791 /* Pods_app.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,9 +208,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 36DAB4A32945FC7200BD9B70 /* Build configuration list for PBXNativeTarget "app" */;
 			buildPhases = (
+				68E9B513CBCD2665ADC24DCF /* [CP] Check Pods Manifest.lock */,
 				36DAB47B2945FC6E00BD9B70 /* Sources */,
 				36DAB47C2945FC6E00BD9B70 /* Frameworks */,
 				36DAB47D2945FC6E00BD9B70 /* Resources */,
+				15B7F74C48F72AE6EEF449AA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -291,18 +328,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		15B7F74C48F72AE6EEF449AA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-app/Pods-app-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-app/Pods-app-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-app/Pods-app-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68E9B513CBCD2665ADC24DCF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-app-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		36DAB47B2945FC6E00BD9B70 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				36DAB4B329460BAE00BD9B70 /* UserInfoModel.swift in Sources */,
-				36BB3BDC2946369000024D70 /* DidItViewModel.swift in Sources */,
+				36BB3BDC2946369000024D70 /* CheckInViewModel.swift in Sources */,
 				36DAB4B629460C4B00BD9B70 /* UserInfoViewModel.swift in Sources */,
+				36BD7FF8294CC5590069B281 /* RequestTool.swift in Sources */,
 				36DAB4852945FC6E00BD9B70 /* RegisterView.swift in Sources */,
 				36BB3BDA2946367400024D70 /* LoginView.swift in Sources */,
 				36DAB4832945FC6E00BD9B70 /* appApp.swift in Sources */,
-				36BB3BDE2946369F00024D70 /* DidItModel.swift in Sources */,
+				36BB3BDE2946369F00024D70 /* CheckInModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,6 +535,7 @@
 		};
 		36DAB4A42945FC7200BD9B70 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7702EF4A4323BF31567F3250 /* Pods-app.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -464,16 +545,18 @@
 				DEVELOPMENT_TEAM = N2PMSD2W9U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = app/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Ganbaro;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = im.yuki.ganbaoro.app;
 				PRODUCT_NAME = Ganbaro;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -484,6 +567,7 @@
 		};
 		36DAB4A52945FC7200BD9B70 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09E93B75D8D7AE6AA699F8DE /* Pods-app.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -493,16 +577,18 @@
 				DEVELOPMENT_TEAM = N2PMSD2W9U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = app/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Ganbaro;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = im.yuki.ganbaoro.app;
 				PRODUCT_NAME = Ganbaro;
 				SWIFT_EMIT_LOC_STRINGS = YES;

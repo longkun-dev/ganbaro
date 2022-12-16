@@ -5,4 +5,8 @@
 //  Created by Longkun on 2022/12/12.
 //
 
-import Foundation
+import SwiftUI
+
+class CheckInViewModel: ObservableObject {
+    
+}

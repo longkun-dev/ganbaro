@@ -9,18 +9,28 @@ import SwiftUI
 
 struct UserInfoModel {
     
-    var id: String
+    var id: String = ""
     
-    var uid: String
+    var uid: String = ""
     
-    var username: String
+    var username: String = ""
     
-    var password: String
+    var password: String = ""
     
-    var sex: String
+    var sex: String = ""
     
-    var description: String
+    var description: String = ""
     
-    var lastLoginTime: String
+    var lastLoginTime: Date = Date()
+    
+    var accountStatus: String = ""
+    
+    var createdTime: Date = Date()
+    
+    var createdBy: String = ""
+    
+    var updatedTime: Date = Date()
+    
+    var updatedBy: String = ""
     
 }

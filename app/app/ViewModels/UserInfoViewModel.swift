@@ -6,29 +6,32 @@
 //
 
 import SwiftUI
+import Alamofire
 
 class UserInfoViewModel: ObservableObject {
     
     @Published var userInfoModel: UserInfoModel
     
     init() {
-        self.userInfoModel = UserInfoModel(id: "", uid: "", username: "", password: "", sex: "", description: "", lastLoginTime: "")
+        self.userInfoModel = UserInfoModel(id: "", uid: "", username: "", password: "", sex: "U", description: "", lastLoginTime: Date())
     }
     
-    var newUsername: String {
-        return self.userInfoModel.username + " 你好"
-    }
-    
-    func submit(username: String, password: String, sex: String) {
-        self.userInfoModel.username = username
-        self.userInfoModel.password = password
-        self.userInfoModel.sex = sex
+    func submit(_ userInfoViewModel: UserInfoViewModel) {
         print("username: \(self.userInfoModel.username), password: \(self.userInfoModel.password), sex: \(self.userInfoModel.sex)")
+        
+        // 封装参数
+        let parameters: [String: Any] = ["username": self.userInfoModel.username, "password": self.userInfoModel.password, "sex": self.userInfoModel.sex]
+        print("请求参数: \(parameters)")
+        
+        // 请求服务器注册
+        RequestTool.request(type: MethodType.POST, url: "/account", parameters: parameters) { res in
+            print("res: \(res)")
+        }
     }
     
-    func resetForm(username: String, password: String, sex: String) {
-//        username = ""
-//        password = ""
-//        sex = ""
+    func resetForm() {
+        self.userInfoModel.username = ""
+        self.userInfoModel.password = ""
+        self.userInfoModel.sex = "U"
     }
 }
