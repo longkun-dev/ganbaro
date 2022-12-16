@@ -23,7 +23,7 @@ import im.yuki.ganbaro.server.home.service.CheckInService;
 
 @Service
 public class CheckInServiceImpl implements CheckInService {
-    
+
     @Autowired
     private CheckInDao checkInDao;
 
@@ -31,7 +31,7 @@ public class CheckInServiceImpl implements CheckInService {
     public Response<?> checkIn(String uid, String isDidIt) {
         Date today = new Date();
         CheckIn checkIn = checkInDao.queryByUidAndDay(uid, today);
-    
+
         if (checkIn != null) {
             checkIn.setIsDidIt(isDidIt);
             checkInDao.update(uid, today, isDidIt);
@@ -73,6 +73,7 @@ public class CheckInServiceImpl implements CheckInService {
             checkInItem.setDay(indexDate);
             checkInItem.setIsDidIt(day2IsDidItMap.get(indexDate));
             checkInItemList.add(checkInItem);
+            DateUtils.addDays(indexDate, 1);
         }
 
         return ResponseUtils.success(ResultEnum.OK, checkInItemList);

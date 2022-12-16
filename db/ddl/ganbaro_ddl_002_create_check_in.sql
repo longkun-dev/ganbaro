@@ -19,4 +19,3 @@ comment on column public.check_in.id is '主键';
 comment on column public.check_in.uid is '用户id';
 comment on column public.check_in.day is '日期';
 comment on column public.check_in.is_did_it is '是否达成目标';
-

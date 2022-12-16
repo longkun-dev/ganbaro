@@ -16,16 +16,16 @@ public interface CheckInService {
 
     /**
      * 打卡
-     * 
+     *
      * @param uid uid
      * @param isDidIt Y or N
      * @return null
      */
-    public Response<?> checkIn(String uid, String isDidIt);
+    Response<?> checkIn(String uid, String isDidIt);
 
     /**
      * 指定月打卡情况查询
-     * 
+     *
      * @param uid uid
      * @param year 指定的年份，如 2022
      * @param month 指定的月份，如 1 则表示 1 月份

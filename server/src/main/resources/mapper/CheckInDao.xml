@@ -8,7 +8,7 @@
         <id property="id" column="id" jdbcType="VARCHAR"/>
         <result property="uid" column="uid" jdbcType="VARCHAR"/>
         <result property="day" column="day" jdbcType="TIMESTAMP"/>
-        <result property="isDiDIt" column="is_did_it" jdbcType="VARCHAR"/>
+        <result property="isDidIt" column="is_did_it" jdbcType="VARCHAR"/>
         <result property="createdTime" column="created_time" jdbcType="TIMESTAMP"/>
         <result property="createdBy" column="created_by" jdbcType="VARCHAR"/>
         <result property="updatedTime" column="updated_time" jdbcType="TIMESTAMP"/>
@@ -20,7 +20,7 @@
     </sql>
 
     <insert id="insert" parameterType="im.yuki.ganbaro.server.home.entity.DailySentence">
-        insert into check_id(uid, day, is_did_it, created_by, updated_by)
+        insert into check_in(uid, day, is_did_it, created_by, updated_by)
         values (#{uid},
                 #{day},
                 #{didIt},
@@ -33,7 +33,7 @@
         <include refid="Base_Column_List"/>
         from check_in
         where uid = #{uid}
-            and day = #{date}
+        and day = #{date}
     </select>
 
     <select id="queryByUidAndDayRange" resultMap="BaseResultMap">
@@ -41,12 +41,12 @@
         <include refid="Base_Column_List"/>
         from check_in
         where uid = #{uid}
-        <test if="startDate != null">
+        <if test="startDate != null">
             and day <![CDATA[ >= ]]> #{startDate}
-        </test>
-        <test if="endDate != null">
+        </if>
+        <if test="endDate != null">
             and day <![CDATA[ <= ]]> #{endDate}
-        </test>
+        </if>
     </select>
 
     <update id="update">
@@ -54,6 +54,6 @@
         set is_did_it    = #{isDidIt},
             updated_time = now()
         where uid = #{uid}
-            and day = #{date}
+          and day = #{date}
     </update>
 </mapper>
