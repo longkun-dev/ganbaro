@@ -19,11 +19,13 @@ enum MethodType {
 }
 
 class RequestTool {
-    class func request(type: MethodType, url: String, parameters: [String: Any]? = nil, finishedCallback: @escaping (_ results: Any) -> ()) {
+    class func request(type: MethodType, url: String, parameters: [String: Any]? = nil, finishedCallback: @escaping (_ results: JSON) -> ()) {
         if (type == MethodType.GET) {
-            AF.request(host + url).responseJSON { response in
+            print("get...")
+            AF.request(host + url, parameters: parameters).responseData { response in
                 switch response.result {
-                case .success(let json):
+                case .success(let res):
+                    let json = JSON(res)
                     finishedCallback(json)
                     break
                 case .failure(let error):
@@ -32,9 +34,10 @@ class RequestTool {
                 }
             }
         } else if (type == MethodType.POST) {
-            AF.request(host + url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
+            AF.request(host + url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseData { response in
                 switch response.result {
-                case .success(let json):
+                case .success(let res):
+                    let json = JSON(res)
                     finishedCallback(json)
                     break
                 case .failure(let error):
@@ -49,7 +52,7 @@ class RequestTool {
     
     //类方法
     class func requestDataWithParam(type: MethodType, url: String, parameters: [String : Any], finishedCallback: @escaping ( _ results: Any) -> ()) {
-        AF.request(host + url, parameters: parameters).responseJSON { (response) in
+        AF.request(host + url, parameters: parameters).responseData { (response) in
             switch response.result {
             case .success(let json):
                 finishedCallback(json)

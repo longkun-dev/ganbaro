@@ -7,17 +7,19 @@
 
 import SwiftUI
 import Alamofire
+import SwiftyJSON
 
-class UserInfoViewModel: ObservableObject {
+class RegisterViewModel: ObservableObject {
     
     @Published var userInfoModel: UserInfoModel
+    
+    @Published var registerSuccess: Bool = false
     
     init() {
         self.userInfoModel = UserInfoModel(id: "", uid: "", username: "", password: "", sex: "U", description: "", lastLoginTime: Date())
     }
     
-    func submit(_ userInfoViewModel: UserInfoViewModel) {
-        print("username: \(self.userInfoModel.username), password: \(self.userInfoModel.password), sex: \(self.userInfoModel.sex)")
+    func submit(_ registerViewModel: RegisterViewModel) {
         
         // 封装参数
         let parameters: [String: Any] = ["username": self.userInfoModel.username, "password": self.userInfoModel.password, "sex": self.userInfoModel.sex]
@@ -26,12 +28,11 @@ class UserInfoViewModel: ObservableObject {
         // 请求服务器注册
         RequestTool.request(type: MethodType.POST, url: "/account", parameters: parameters) { res in
             print("res: \(res)")
+            print(res["code"])
+            print(res["message"])
+            print(res["data"])
+            
+            self.registerSuccess = res["code"] == 201
         }
-    }
-    
-    func resetForm() {
-        self.userInfoModel.username = ""
-        self.userInfoModel.password = ""
-        self.userInfoModel.sex = "U"
     }
 }

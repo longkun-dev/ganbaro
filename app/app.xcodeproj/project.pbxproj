@@ -12,6 +12,9 @@
 		36BB3BDC2946369000024D70 /* CheckInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BB3BDB2946369000024D70 /* CheckInViewModel.swift */; };
 		36BB3BDE2946369F00024D70 /* CheckInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BB3BDD2946369F00024D70 /* CheckInModel.swift */; };
 		36BD7FF8294CC5590069B281 /* RequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BD7FF7294CC5590069B281 /* RequestTool.swift */; };
+		36BF47FE294DE32A0062C7AD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BF47FD294DE32A0062C7AD /* HomeView.swift */; };
+		36BF4800294DE7D20062C7AD /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BF47FF294DE7D20062C7AD /* LoginViewModel.swift */; };
+		36BF4803294E0FAF0062C7AD /* IndexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BF4802294E0FAF0062C7AD /* IndexView.swift */; };
 		36DAB4832945FC6E00BD9B70 /* appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DAB4822945FC6E00BD9B70 /* appApp.swift */; };
 		36DAB4852945FC6E00BD9B70 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DAB4842945FC6E00BD9B70 /* RegisterView.swift */; };
 		36DAB4872945FC7200BD9B70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36DAB4862945FC7200BD9B70 /* Assets.xcassets */; };
@@ -20,7 +23,7 @@
 		36DAB49E2945FC7200BD9B70 /* appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DAB49D2945FC7200BD9B70 /* appUITests.swift */; };
 		36DAB4A02945FC7200BD9B70 /* appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DAB49F2945FC7200BD9B70 /* appUITestsLaunchTests.swift */; };
 		36DAB4B329460BAE00BD9B70 /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DAB4B229460BAE00BD9B70 /* UserInfoModel.swift */; };
-		36DAB4B629460C4B00BD9B70 /* UserInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DAB4B529460C4B00BD9B70 /* UserInfoViewModel.swift */; };
+		36DAB4B629460C4B00BD9B70 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DAB4B529460C4B00BD9B70 /* RegisterViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,9 @@
 		36BB3BDB2946369000024D70 /* CheckInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewModel.swift; sourceTree = "<group>"; };
 		36BB3BDD2946369F00024D70 /* CheckInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInModel.swift; sourceTree = "<group>"; };
 		36BD7FF7294CC5590069B281 /* RequestTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTool.swift; sourceTree = "<group>"; };
+		36BF47FD294DE32A0062C7AD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		36BF47FF294DE7D20062C7AD /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		36BF4802294E0FAF0062C7AD /* IndexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexView.swift; sourceTree = "<group>"; };
 		36DAB47F2945FC6E00BD9B70 /* Ganbaro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ganbaro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36DAB4822945FC6E00BD9B70 /* appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appApp.swift; sourceTree = "<group>"; };
 		36DAB4842945FC6E00BD9B70 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -57,7 +63,7 @@
 		36DAB49D2945FC7200BD9B70 /* appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appUITests.swift; sourceTree = "<group>"; };
 		36DAB49F2945FC7200BD9B70 /* appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		36DAB4B229460BAE00BD9B70 /* UserInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoModel.swift; sourceTree = "<group>"; };
-		36DAB4B529460C4B00BD9B70 /* UserInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewModel.swift; sourceTree = "<group>"; };
+		36DAB4B529460C4B00BD9B70 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		49360A8D91668975C32BE791 /* Pods_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7702EF4A4323BF31567F3250 /* Pods-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app.debug.xcconfig"; path = "Target Support Files/Pods-app/Pods-app.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -171,6 +177,8 @@
 			children = (
 				36DAB4842945FC6E00BD9B70 /* RegisterView.swift */,
 				36BB3BD92946367400024D70 /* LoginView.swift */,
+				36BF47FD294DE32A0062C7AD /* HomeView.swift */,
+				36BF4802294E0FAF0062C7AD /* IndexView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -178,8 +186,9 @@
 		36DAB4AE2945FCCA00BD9B70 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				36DAB4B529460C4B00BD9B70 /* UserInfoViewModel.swift */,
+				36DAB4B529460C4B00BD9B70 /* RegisterViewModel.swift */,
 				36BB3BDB2946369000024D70 /* CheckInViewModel.swift */,
+				36BF47FF294DE7D20062C7AD /* LoginViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -375,10 +384,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36BF47FE294DE32A0062C7AD /* HomeView.swift in Sources */,
 				36DAB4B329460BAE00BD9B70 /* UserInfoModel.swift in Sources */,
 				36BB3BDC2946369000024D70 /* CheckInViewModel.swift in Sources */,
-				36DAB4B629460C4B00BD9B70 /* UserInfoViewModel.swift in Sources */,
+				36BF4803294E0FAF0062C7AD /* IndexView.swift in Sources */,
+				36DAB4B629460C4B00BD9B70 /* RegisterViewModel.swift in Sources */,
 				36BD7FF8294CC5590069B281 /* RequestTool.swift in Sources */,
+				36BF4800294DE7D20062C7AD /* LoginViewModel.swift in Sources */,
 				36DAB4852945FC6E00BD9B70 /* RegisterView.swift in Sources */,
 				36BB3BDA2946367400024D70 /* LoginView.swift in Sources */,
 				36DAB4832945FC6E00BD9B70 /* appApp.swift in Sources */,

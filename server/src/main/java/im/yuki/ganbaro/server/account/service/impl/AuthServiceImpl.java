@@ -26,9 +26,7 @@ public class AuthServiceImpl implements AuthService {
     private UserInfoDao userInfoDao;
 
     @Override
-    public Response<?> login(UserInfo userInfo) {
-        String uid = userInfo.getUid();
-        String password = userInfo.getPassword();
+    public Response<?> login(String uid, String password) {
         if (StringUtils.isBlank(uid) || StringUtils.isBlank(password)) {
             return ResponseUtils.fail(ResultEnum.BAD_REQUEST, "账号密码不能为空");
         }

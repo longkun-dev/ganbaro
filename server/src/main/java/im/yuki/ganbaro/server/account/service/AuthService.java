@@ -14,10 +14,11 @@ public interface AuthService {
     /**
      * 登录操作
      *
-     * @param userInfo uid 和 密码
+     * @param uid uid
+     * @param password password
      * @return null
      */
-    Response<?> login(UserInfo userInfo);
+    Response<?> login(String uid, String password);
 
     /**
      * 退出登录
