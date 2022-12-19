@@ -1,9 +1,0 @@
-数据库名:
-用户名: postgres
-密码: GxzlfjlbCczXOAO2xoUPBckFl
-连接地址: jdbc:postgresql://debian.yuki.im:5432/db_ganbaro
-
-数据库名: db_ganbaro
-用户名: ganbaro
-密码: KKlwyTksFDV4eTWGQmZproJbV
-连接地址: jdbc:postgresql://debian.yuki.im:5432/db_ganbaro
