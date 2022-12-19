@@ -18,12 +18,11 @@ class LoginViewModel: ObservableObject {
     }
     
     func login() {
-        self.loginSuccess = true
-//        let parameter: [String: Any] = ["uid": self.userInfo.uid, "password": self.userInfo.password]
-//        RequestTool.request(type: MethodType.GET, url: "/login", parameters: parameter) { res in
-//            print("res: \(res)")
-            
-//            self.loginSuccess = res["code"] == 200
-//        }
+//        self.loginSuccess = false
+        let parameter: [String: Any] = ["uid": self.userInfo.uid, "password": self.userInfo.password]
+        RequestTool.request(type: MethodType.GET, url: "/login", parameters: parameter) { res in
+            print("res: \(res)")
+            self.loginSuccess = res["code"] == 200
+        }
     }
 }

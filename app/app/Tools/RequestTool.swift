@@ -9,7 +9,7 @@ import Swift
 import Alamofire
 import SwiftyJSON
 
-let host: String = "http://debian.yuki.im:8936/api/v1"
+let host: String = "http://localhost:8936/api/v1"
 
 enum MethodType {
     case GET

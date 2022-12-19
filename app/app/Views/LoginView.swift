@@ -12,6 +12,8 @@ struct LoginView: View {
     @ObservedObject var loginUserInfoViewModel = LoginViewModel()
     
     @Binding var loginSuccess: Bool
+    
+    @State var showErrorMsg: Bool = false
         
     var body: some View {
         NavigationView {
@@ -27,11 +29,18 @@ struct LoginView: View {
                         TextField("登录密码", text: $loginUserInfoViewModel.userInfo.password)
                             .disableAutocorrection(true)
                     }
+                    if showErrorMsg {
+                        Text("用户名或密码错误")
+                            .foregroundColor(Color.pink)
+                            .font(.system(size: 13))
+                            .opacity(0.8)
+                    }
                 }
                 HStack {
                     Button("登录", action: {
                         self.loginUserInfoViewModel.login()
                         self.loginSuccess = self.loginUserInfoViewModel.loginSuccess
+                        showErrorMsg = !self.loginUserInfoViewModel.loginSuccess
                     })
                     .frame(maxWidth: .infinity, maxHeight: .leastNormalMagnitude, alignment: .center)
                 }

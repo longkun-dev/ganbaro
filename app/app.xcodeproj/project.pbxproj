@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2DAAF1CB8BBB1361A12D76BA /* Pods_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49360A8D91668975C32BE791 /* Pods_app.framework */; };
+		367004912950A9FF00FCDDE6 /* StatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367004902950A9FF00FCDDE6 /* StatView.swift */; };
+		367004932950AA2B00FCDDE6 /* RankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367004922950AA2B00FCDDE6 /* RankView.swift */; };
+		367004952950AA6B00FCDDE6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367004942950AA6B00FCDDE6 /* ProfileView.swift */; };
 		36BB3BDA2946367400024D70 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BB3BD92946367400024D70 /* LoginView.swift */; };
 		36BB3BDC2946369000024D70 /* CheckInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BB3BDB2946369000024D70 /* CheckInViewModel.swift */; };
 		36BB3BDE2946369F00024D70 /* CheckInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BB3BDD2946369F00024D70 /* CheckInModel.swift */; };
@@ -45,6 +48,9 @@
 
 /* Begin PBXFileReference section */
 		09E93B75D8D7AE6AA699F8DE /* Pods-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app.release.xcconfig"; path = "Target Support Files/Pods-app/Pods-app.release.xcconfig"; sourceTree = "<group>"; };
+		367004902950A9FF00FCDDE6 /* StatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatView.swift; sourceTree = "<group>"; };
+		367004922950AA2B00FCDDE6 /* RankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankView.swift; sourceTree = "<group>"; };
+		367004942950AA6B00FCDDE6 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		36BB3BD92946367400024D70 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		36BB3BDB2946369000024D70 /* CheckInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewModel.swift; sourceTree = "<group>"; };
 		36BB3BDD2946369F00024D70 /* CheckInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInModel.swift; sourceTree = "<group>"; };
@@ -179,6 +185,9 @@
 				36BB3BD92946367400024D70 /* LoginView.swift */,
 				36BF47FD294DE32A0062C7AD /* HomeView.swift */,
 				36BF4802294E0FAF0062C7AD /* IndexView.swift */,
+				367004902950A9FF00FCDDE6 /* StatView.swift */,
+				367004922950AA2B00FCDDE6 /* RankView.swift */,
+				367004942950AA6B00FCDDE6 /* ProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -384,6 +393,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				367004912950A9FF00FCDDE6 /* StatView.swift in Sources */,
 				36BF47FE294DE32A0062C7AD /* HomeView.swift in Sources */,
 				36DAB4B329460BAE00BD9B70 /* UserInfoModel.swift in Sources */,
 				36BB3BDC2946369000024D70 /* CheckInViewModel.swift in Sources */,
@@ -395,6 +405,8 @@
 				36BB3BDA2946367400024D70 /* LoginView.swift in Sources */,
 				36DAB4832945FC6E00BD9B70 /* appApp.swift in Sources */,
 				36BB3BDE2946369F00024D70 /* CheckInModel.swift in Sources */,
+				367004952950AA6B00FCDDE6 /* ProfileView.swift in Sources */,
+				367004932950AA2B00FCDDE6 /* RankView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

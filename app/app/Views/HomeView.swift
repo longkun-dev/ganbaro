@@ -11,7 +11,7 @@ struct HomeView: View {
     
     @ObservedObject var loginViewModel = LoginViewModel()
     
-    @State var loginSuccess: Bool = false
+    @State var loginSuccess: Bool = true
     
     var body: some View {
         ZStack {
@@ -29,16 +29,25 @@ struct MyTabView: View {
         TabView {
             IndexView()
                 .tabItem({
-                    Image(systemName: "house")
+                    Image(systemName: "house.fill")
                     Text("首页")
                 })
-            Text("Page 2")
+            StatView()
                 .tabItem({
-                    Image(systemName: "gear")
-                    Text("Gear")
+                    Image(systemName: "clock.fill")
+                    Text("统计")
+                })
+            RankView()
+                .tabItem({
+                    Image(systemName: "list.star")
+                    Text("排名")
+                })
+            ProfileView()
+                .tabItem({
+                    Image(systemName: "person.fill")
+                    Text("我的")
                 })
         }
-        .background(Color.gray)
     }
 }
 
