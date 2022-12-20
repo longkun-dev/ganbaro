@@ -10,5 +10,8 @@ spring:
     driver-class-name: org.postgresql.Driver
     username: ganbaro
     password: KKlwyTksFDV4eTWGQmZproJbV
+  jackson:
+    date-format: yyyy-MM-dd
+    time-zone: Asia/Shanghai
 mybatis:
   mapper-locations: classpath:mapper/*.xml

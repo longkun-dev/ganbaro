@@ -23,14 +23,4 @@ public interface CheckInService {
      */
     Response<?> checkIn(String uid, String isDidIt);
 
-    /**
-     * 指定月打卡情况查询
-     *
-     * @param uid uid
-     * @param year 指定的年份，如 2022
-     * @param month 指定的月份，如 1 则表示 1 月份
-     * @return 该月打卡情况
-     */
-    Response<List<CheckIn>> queryCheckIn(String uid, int year, int month);
-
 }

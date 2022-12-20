@@ -15,6 +15,13 @@
         <result property="updatedBy" column="updated_by" jdbcType="VARCHAR"/>
     </resultMap>
 
+    <resultMap id="StatResultMap" type="im.yuki.ganbaro.server.stat.entity.CheckInStat">
+        <result property="uid" column="uid" jdbcType="VARCHAR"/>
+        <result property="startDate" column="start_date" jdbcType="DATE"/>
+        <result property="endDate" column="end_date" jdbcType="DATE"/>
+        <result property="continuousDays" column="continuous_days" jdbcType="INTEGER"/>
+    </resultMap>
+
     <sql id="Base_Column_List">
         id,uid,day,is_did_it,created_time,created_by,updated_time,updated_by
     </sql>
@@ -23,12 +30,12 @@
         insert into check_in(uid, day, is_did_it, created_by, updated_by)
         values (#{uid},
                 #{day},
-                #{didIt},
+                #{isDidIt},
                 #{createdBy},
                 #{updatedBy})
     </insert>
 
-    <select id="queryByUidAndDay">
+    <select id="queryByUidAndDay" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
         from check_in
@@ -47,6 +54,48 @@
         <if test="endDate != null">
             and day <![CDATA[ <= ]]> #{endDate}
         </if>
+    </select>
+
+    <select id="queryMaxContinuousByUid" resultMap="StatResultMap">
+        select t2.uid,
+               t2.day - (t2.rn || ' day')::interval as date_group,
+               min(t2.day)                          as start_date,
+               max(t2.day)                          as end_date,
+               count(1)                             as continuous_days
+        from (select t1.uid,
+                     t1.day,
+                     row_number() over (partition by uid order by day) as rn
+              from (select uid,
+                           day
+                    from check_in
+                    where uid = #{uid}
+                      and is_did_it = 'Y'
+                   ) t1
+             ) t2
+        group by uid, t2.day - (t2.rn || ' day')::interval
+        order by continuous_days desc
+        limit 1
+    </select>
+
+    <select id="queryCurrentContinuousByUid" resultMap="StatResultMap">
+        select t2.uid,
+               t2.day - (t2.rn || ' day')::interval as date_group,
+               min(t2.day)                          as start_date,
+               max(t2.day)                          as end_date,
+               count(1)                             as continuous_days
+        from (select t1.uid,
+                     t1.day,
+                     row_number() over (partition by uid order by day) as rn
+              from (select uid,
+                           day
+                    from check_in
+                    where uid = #{uid}
+                      and is_did_it = 'Y'
+                   ) t1
+             ) t2
+        group by uid, t2.day - (t2.rn || ' day')::interval
+        order by end_date desc
+        limit 1
     </select>
 
     <update id="update">

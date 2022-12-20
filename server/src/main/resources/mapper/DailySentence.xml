@@ -32,7 +32,7 @@
         select
         <include refid="Base_Column_List"/>
         from daily_sentence
-        tablesample bernoulli(0.2)
+        order by random()
         limit 1
     </select>
 

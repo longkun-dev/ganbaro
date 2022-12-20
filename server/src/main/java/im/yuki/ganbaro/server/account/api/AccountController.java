@@ -25,7 +25,6 @@ public class AccountController {
     }
 
     @DeleteMapping("/account")
-    @PostMapping("/account")
     public Response<?> delAccount(@RequestParam String uid) {
         return accountService.delAccount(uid);
     }

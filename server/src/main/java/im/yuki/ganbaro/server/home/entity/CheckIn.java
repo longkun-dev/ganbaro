@@ -12,12 +12,14 @@ import lombok.ToString;
 @Data
 @ToString
 public class CheckIn {
-    
+
     private String id;
 
     private String uid;
 
     private Date day;
+
+    private String dayStr;
 
     private String isDidIt;
 
